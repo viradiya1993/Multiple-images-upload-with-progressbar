@@ -1,0 +1,21 @@
+<div class="header">
+  <h4>{{fileUploadService.uploadedFileCount + ' of '+fileUploadService.files.length}}</h4>
+  <button type="button" class="button" (click)="deleteProgress()">X</button>
+</div>
+<div class="container2">
+  <div *ngFor="let item of progress" class="box">
+    <div style="height: 60px; min-width: 50%;display: inline-block">
+      <img [src]="item.imgUrl" />
+      <div>
+        <h6>{{ item.name }}</h6>
+        <div style="width: 80%;display: inline-block">
+          <div class="progress" style="height: 5px;margin-bottom: 20px;">
+            <div class="progress-bar" role="progressbar" [style.width.%]="item.progress" aria-valuenow="25" aria-valuemin="0" aria-valuemax="80"></div>
+          </div>
+        </div>
+        <h6>{{ item.tag }}</h6>
+      </div>
+    </div>
+  </div>
+
+</div>

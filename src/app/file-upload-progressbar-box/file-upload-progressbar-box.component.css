@@ -1,0 +1,42 @@
+.h4 {
+  color: red;
+}
+
+img {
+  height: 70px;
+  width: 70px;
+  display: inline-block;
+  float: left;
+}
+
+.box {
+  border-bottom: grey 1px solid;
+  margin: 5px;
+}
+
+h4 {
+  display: inline;
+  float: left;
+}
+button {
+  margin-left: 100px;
+}
+
+.header{
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background: rgb(30,30,30);
+  color: white;
+  padding: 5px;
+}
+
+.button{
+  position: absolute;
+  right: 5px;
+  /*float: right;*/
+}
+
+.button:hover {
+  cursor: pointer;
+}

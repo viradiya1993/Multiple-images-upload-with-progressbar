@@ -4,13 +4,13 @@ import {FileUploadService} from '../file-upload.service';
 
 @Component({
   selector: 'app-file-upload-form',
-  templateUrl: './file-upload-form.component.html',
-  styleUrls: ['./file-upload-form.component.css']
+  templateUrl: './file-upload-form-about.component.html',
+  styleUrls: ['./file-upload-form-about.component.css']
 })
-export class FileUploadFormComponent implements OnInit {
+export class FileUploadFormAboutComponent implements OnInit {
   form: FormGroup;
   dropZoneActive = false;
-  tag = 'test';
+  tag = 'about';
 
   constructor(private fb: FormBuilder, private fileUploadService: FileUploadService) { }
 
@@ -19,20 +19,25 @@ export class FileUploadFormComponent implements OnInit {
       files: ['']
     });
   }
-  onSelect(event): void {
-    // console.log(event.target.files);
+  onSelect(event, fileInput: HTMLInputElement): void {
+    console.log('This function is calllllllllllllllllllllllllllllllllllled');
+    let id = this.fileUploadService.files.length;
     const filesWithTag = [];
     for (const file of event.target.files) {
-      filesWithTag.push({file: file, tag: this.tag});
+      filesWithTag.push({file: file, tag: this.tag, id: id});
+      id++;
     }
     this.fileUploadService.files.push(...filesWithTag);
     this.fileUploadService.upload();
+    fileInput.value = null;
   }
   onDrop(fileList: FileList) {
+    let id = this.fileUploadService.files.length;
     const filesWithTag = [];
     // @ts-ignore
     for (const file of fileList) {
-      filesWithTag.push({file: file, tag: this.tag});
+      filesWithTag.push({file: file, tag: this.tag, id: id});
+      id++;
     }
     this.fileUploadService.files.push(...filesWithTag);
     this.fileUploadService.upload();

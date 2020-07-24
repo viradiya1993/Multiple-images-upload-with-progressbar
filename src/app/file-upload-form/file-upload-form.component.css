@@ -1,15 +1,24 @@
 .dropzone {
-  width: 80%;
+  width: 100%;
   height: 200px;
   text-align: center;
   font-size: 30px;
-  margin-bottom: 20px;
+  position: relative;
 }
-
+.dropzone p{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  margin-bottom: 0;
+}
 .active{
   border: blue solid 2px;
 }
 
 .disactive{
   border: grey dashed 1px;
+}
+.main_contents {
+  margin: 25px 0px 0px;
 }

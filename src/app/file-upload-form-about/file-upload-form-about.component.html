@@ -1,0 +1,15 @@
+<hr>
+<a routerLink="/">Home</a>
+<hr>
+<div class="box" [ngClass]="{'active':dropZoneActive, 'disactive': !dropZoneActive}">
+  <div class="dropzone" appFileDrop (filesDropped)="onDrop($event)" (filesHovered)="dropZoneState($event)"><p>Drop</p></div>
+</div>
+<div class="main_contents">
+  <div class="files_upload">
+    <form [formGroup]="form">
+      <div class="form-group">
+        <input type="file" name="files" (change)="onSelect($event)" multiple/>
+      </div>
+    </form>
+  </div>
+</div>
